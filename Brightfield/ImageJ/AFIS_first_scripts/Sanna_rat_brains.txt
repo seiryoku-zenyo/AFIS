@@ -1,0 +1,140 @@
+// Action Bar description file :Sanna_rat_brains
+run("Action Bar","/plugins/ActionBar/Sanna_rat_brains");
+exit();
+<sticky>
+<line>
+<button> 1 line 1
+label=Subtantia nigra
+icon=subtantia nigra.png
+arg=<macro>
+runMacro("temp.ijm");
+</macro>
+</line>
+<line>
+<button> 1 line 2
+label=calibration
+icon=calib.png
+arg=<macro>
+runMacro("calib_SN.ijm");
+</macro>
+<line>
+<button> 2 line 2
+label=choose_ROI
+icon=freehand_selection.png
+arg=<macro>
+setTool("freehand");
+</macro>
+</line>
+<line>
+<button> 1 line 4
+label=measure dentrites and somata
+icon=count_somata.png
+arg=<macro>
+runMacro("Subtantia_nigra.ijm");
+</macro>
+</line>
+<line>
+</line>
+<line>
+<button> 1 line 5
+label=Caudate putamen
+icon=subtantia nigra.png
+arg=
+</line>
+<line>
+<button> 1 line 6
+label=calibration
+icon=calib.png
+arg=<macro>
+runMacro("calib_CP.ijm");
+</macro>
+<button> 2 line 6
+label=choose_ROI
+icon=choose_ROI.png
+arg=<macro>
+runMacro("choose_CP_ROI.ijm");
+</macro>
+</line>
+<line>
+<button> 1 line 7
+label=montage
+icon=stich.png
+arg=<macro>
+run("Images to Stack", "method=[Copy (center)] name=Stack title=CPx use");
+run("Make Montage...");
+selectWindow("Stack");
+close();
+selectWindow("Montage");
+</macro>
+<button> 2 line 7
+label=crop
+icon=crop.png
+arg=<macro>
+run("Duplicate...", "title=CPx.tif");
+</macro>
+</line>
+<line>
+<button> 1 line 8
+label=measure_dendrites, somata and white bodies
+icon=measure_dendrites.png
+arg=<macro>
+runMacro("dendrites_.ijm");
+</macro>
+</line>
+<line>
+</line>
+<line>
+<button> 1 line 9
+label=Globus pallidus
+icon=subtantia nigra.png
+arg=
+</line>
+<line>
+<button> 1 line 6
+label=calibration
+icon=calib.png
+arg=<macro>
+runMacro("calib_GP.ijm");
+</macro>
+</line>
+<line>
+<button> 1 line 10
+label=measure_dendrites
+icon=measure_dendrites.png
+arg=<macro>
+runMacro("GP.ijm");
+</macro>
+</line>
+<line>
+</line>
+<line>
+<button> 1 line 11
+label=Habenula
+icon=subtantia nigra.png
+arg=
+</line>
+<line>
+<button> 1 line 12
+label=calibration
+icon=calib.png
+arg=<macro>
+runMacro("calib_Hab.ijm");
+</macro>
+<line>
+<button> 2 line 12
+label=choose_ROI
+icon=freehand_selection.png
+arg=<macro>
+setTool("freehand");
+</macro>
+</line>
+<line>
+<button> 1 line 13
+label=measure_dendrites
+icon=measure_dendrites.png
+arg=<macro>
+runMacro("habenula.ijm");
+</macro>
+</line>
+<sticky>
+// end of file
